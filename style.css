@@ -260,3 +260,116 @@ footer {
     object-fit: contain;
     margin: 0 auto;
 }
+
+
+/* Professional Resume - Print Styles */
+@media print {
+
+    @page {
+        size: letter;
+        margin: 0.4in;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-family: Arial, sans-serif;
+        font-size: 9pt;
+        line-height: 1.25;
+    }
+
+    /* Hide website navigation and buttons */
+    .navbar,
+    .hero-buttons,
+    footer {
+        display: none !important;
+    }
+
+    /* Compact resume heading */
+    header,
+    .hero {
+        background: white !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+    }
+
+    .hero h1 {
+        color: black !important;
+        font-size: 20pt;
+        margin: 0 0 4px;
+    }
+
+    .hero p {
+        color: black !important;
+        font-size: 10pt;
+        margin: 0;
+    }
+
+    .hero .intro {
+        display: none !important;
+    }
+
+    main {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    section {
+        background: white !important;
+        color: black !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 9px 0 !important;
+        break-inside: avoid;
+    }
+
+    section h2 {
+        color: #222 !important;
+        font-size: 11pt;
+        margin: 0 0 4px;
+        border-bottom: 1px solid #aaa;
+    }
+
+    section h3 {
+        color: black !important;
+        font-size: 9pt;
+        margin: 5px 0 2px;
+    }
+
+    section p,
+    section li {
+        color: black !important;
+        font-size: 9pt;
+        margin: 2px 0;
+    }
+
+    section ul {
+        margin: 3px 0;
+        padding-left: 18px;
+    }
+
+    .skills-list {
+        display: block !important;
+    }
+
+    .skills-list span {
+        display: inline-block;
+        background: none !important;
+        color: black !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 9px 3px 0 !important;
+        font-size: 9pt;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+}
