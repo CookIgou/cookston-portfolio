@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Preview Tool | William Cookston Igou</title>
+    <link rel="stylesheet" href="seo-tool.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SEO Preview Tool</h1>
+        <p>Preview how your website might appear in Google search results.</p>
+    </header>
+
+    <main>
+
+        <section class="seo-input">
+
+            <h2>Enter Your Website Information</h2>
+            <label for="page-url">Website URL</label>
+            <input type="text" id="page-url" placeholder="https://www.example.com">
+            <button type="button" id="copy-url">Copy URL</button>
+            <p id="url-error" class="url-error"></p>
+            <label for="page-title">Page Title</label>
+            <input type="text" id="page-title" placeholder="Enter your website title">
+            <button type="button" id="copy-title">Copy Title</button>
+            <p class="character-count">
+                Characters: <span id="title-count">0</span> / 60
+            </p>
+
+            <label for="page-description">Meta Description</label>
+            <textarea id="page-description" placeholder="Enter your website description"></textarea>
+            <button type="button" id="copy-description">Copy Description</button>
+            <p class="character-count">
+                Characters: <span id="description-count">0</span> / 160
+            </p>
+            <button type="button" id="clear-button">Clear Fields</button>
+        </section>
+        <section class="seo-preview">
+
+            <h2>Google Search Preview</h2>
+
+            <div class="google-result">
+
+                <div class="google-url" id="preview-url">www.example.com</div>
+
+                <h3 id="preview-title">Your Page Title Will Appear Here</h3>
+
+                <p id="preview-description">
+                    Your meta description will appear here when you enter it above.
+                </p>
+
+            </div>
+            <div class="mobile-preview">
+
+                <h3>Mobile Search Preview</h3>
+
+                <div class="mobile-result">
+
+                    <div class="mobile-url" id="mobile-url">www.example.com</div>
+
+                    <h4 id="mobile-title">Your Page Title Will Appear Here</h4>
+
+                    <p id="mobile-description">
+                        Your meta description will appear here when you enter it above.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- SEO Score -->
+        <section class="seo-score">
+            <h2>SEO Score</h2>
+
+            <div class="score-display">
+                <span id="seo-score">0</span>
+                <span>/ 100</span>
+            </div>
+
+            <p id="score-message">Enter your page information to get your SEO score.</p>
+            <ul id="seo-suggestions"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by William Cookston Igou</p>
+    </footer>
+
+    <script src="seo-tool.js"></script>
+
+</body>
+
+</html>
