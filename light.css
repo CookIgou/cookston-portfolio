@@ -1,0 +1,1069 @@
+/* =========================================================
+   BUILDING INCOME — PORTFOLIO 2.0
+   NEON PUNK — LIGHT THEME
+   ========================================================= */
+
+/* 1. THEME VARIABLES AND PAGE BACKGROUND */
+
+body[data-theme="light"] {
+    --page-bg: #ffffff;
+    --panel-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-primary: #080817;
+    --text-secondary: #252535;
+    --accent-primary: #ff009d;
+    --accent-secondary: #00e5ee;
+    --accent-lime: #c7ff00;
+    --border-color: #080817;
+
+    background-color: #ffffff;
+    background-image: url("images/neon-punk-background.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--text-primary);
+    position: relative;
+    isolation: isolate;
+    overflow-x: clip;
+}
+
+body[data-theme="light"]::before,
+body[data-theme="light"]::after {
+    content: none;
+}
+
+/* 2. DESIGN BAR */
+
+body[data-theme="light"] .design-bar {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 4px solid var(--accent-secondary);
+    box-shadow: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: visible;
+}
+
+body[data-theme="light"] .site-identity strong {
+    color: #080817;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.7px;
+}
+
+body[data-theme="light"] .site-identity span {
+    color: #080817;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+}
+
+body[data-theme="light"] #theme-toggle {
+    background: #ffffff;
+    color: var(--accent-primary);
+    border: 3px solid var(--accent-primary);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 900;
+    box-shadow: none;
+    transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+
+body[data-theme="light"] #theme-toggle:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+body[data-theme="light"] .theme-options {
+    position: absolute;
+    z-index: 2001;
+    background: white;
+    border: 2px solid var(--accent-primary);
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 rgba(0, 229, 238, 0.8);
+}
+
+body[data-theme="light"] .theme-options button {
+    color: #080817;
+    font-weight: 700;
+}
+
+body[data-theme="light"] .theme-options button:hover {
+    background: var(--accent-lime);
+}
+
+/* Raise design bar when dropdown opens */
+
+body[data-theme="light"] .design-bar:has(.theme-options:not([hidden])) {
+    z-index: 2000;
+}
+
+/* 3. HEADER AND NAVIGATION */
+
+body[data-theme="light"] header {
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+}
+
+body[data-theme="light"] .navbar {
+    position: relative;
+    z-index: 20;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    margin: 12px auto 20px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 3px solid #080817;
+    border-radius: 22px;
+    box-shadow: 7px 7px 0 #ff009d;
+
+    transition:
+        border-radius 450ms ease,
+        box-shadow 450ms ease,
+        background 450ms ease;
+}
+
+body[data-theme="light"] .nav-links {
+    flex-wrap: nowrap;
+    gap: clamp(3px, 1.5vw, 16px);
+}
+
+body[data-theme="light"] .nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 6px clamp(4px, 1vw, 10px);
+    white-space: nowrap;
+    color: #080817;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: none;
+    z-index: 0;
+    isolation: isolate;
+    transition: color 0.2s;
+}
+
+/* Lime paint-brush navigation highlight */
+
+body[data-theme="light"] .nav-links a::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    top: 25%;
+    height: 60%;
+    background: var(--accent-lime);
+
+    clip-path: polygon(0 15%, 7% 0, 19% 12%, 32% 3%,
+            47% 13%, 62% 0, 78% 9%, 100% 0,
+            96% 85%, 81% 100%, 65% 91%,
+            49% 100%, 30% 88%, 12% 100%, 0 85%);
+
+    transform: rotate(-3deg) scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+    z-index: -1;
+}
+
+body[data-theme="light"] .nav-links a:hover::before,
+body[data-theme="light"] .nav-links a.active::before,
+body[data-theme="light"] .nav-links a[aria-current="page"]::before,
+body[data-theme="light"] .nav-links a[aria-current="location"]::before {
+    transform: rotate(-3deg) scaleX(1);
+}
+
+body[data-theme="light"] .nav-links a:hover {
+    color: #080817;
+    text-shadow: none;
+}
+
+body[data-theme="light"] .navbar a.active {
+    background: #c7ff00;
+    color: #080817;
+}
+
+/* 4. HERO */
+
+body[data-theme="light"] .hero {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 75px 40px;
+    min-height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+body[data-theme="light"] .hero::before,
+body[data-theme="light"] .hero::after {
+    content: none;
+}
+
+body[data-theme="light"] .hero>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome text */
+
+body[data-theme="light"] .hero .intro {
+    color: #080817;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Main hero name */
+
+body[data-theme="light"] .hero h1 {
+    position: relative;
+    display: table;
+    max-width: 100%;
+    margin: 20px auto 30px;
+    padding: 8px 18px;
+
+    color: #080817;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(38px, 6vw, 82px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+
+    text-shadow: 3px 3px 0 rgba(255, 0, 157, 0.15);
+    isolation: isolate;
+}
+
+/* Lime graffiti stroke */
+
+body[data-theme="light"] .hero h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35%;
+    height: 48%;
+    background: #c7ff00;
+
+    clip-path: polygon(0 18%, 8% 0, 21% 10%, 36% 2%,
+            52% 12%, 69% 0, 84% 9%, 100% 3%,
+            97% 89%, 83% 100%, 66% 91%,
+            48% 100%, 29% 90%, 12% 100%, 0 85%);
+
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+/* Cyan graffiti stroke */
+
+body[data-theme="light"] .hero h1::after {
+    content: "";
+    position: absolute;
+    left: 4%;
+    right: 3%;
+    top: 27%;
+    height: 18%;
+    background: #00e5ee;
+
+    clip-path: polygon(0 20%, 12% 0, 27% 15%, 44% 3%,
+            61% 14%, 79% 0, 100% 20%,
+            97% 85%, 76% 100%, 55% 88%,
+            33% 100%, 13% 85%, 0 100%);
+
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+/* Hero description */
+
+body[data-theme="light"] .hero>p:not(.intro) {
+    color: #181824;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: -0.3px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+body[data-theme="light"] .hero-buttons {
+    gap: 20px;
+    margin-top: 35px;
+}
+
+/* 5. HERO SPECIALTIES */
+
+body[data-theme="light"] .hero-specialties {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 12px auto 0;
+}
+
+body[data-theme="light"] .hero-specialties span {
+    display: inline-block;
+    padding: 9px 16px;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(13px, 1.5vw, 17px);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+
+    transform: skew(-5deg);
+}
+
+body[data-theme="light"] .hero-specialties span:nth-child(1) {
+    background: #ff009d;
+    color: #ffffff;
+    box-shadow: 5px 5px 0 #080817;
+}
+
+body[data-theme="light"] .hero-specialties span:nth-child(2) {
+    background: #080817;
+    color: #ffffff;
+    box-shadow: 5px 5px 0 #00e5ee;
+}
+
+body[data-theme="light"] .hero-specialties span:nth-child(3) {
+    background: #c7ff00;
+    color: #080817;
+    box-shadow: 5px 5px 0 #ff009d;
+}
+
+body[data-theme="light"] .hero-specialties span:nth-child(4) {
+    background: #00e5ee;
+    color: #080817;
+    box-shadow: 5px 5px 0 #ff009d;
+}
+
+/* 6. MAIN SECTION PANELS */
+
+body[data-theme="light"] main>section {
+    position: relative;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(255, 0, 157, 0.20);
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+}
+
+body[data-theme="light"] #about {
+    border-top: 4px solid var(--accent-secondary);
+}
+
+body[data-theme="light"] #projects {
+    border-top: 4px solid var(--accent-primary);
+}
+
+body[data-theme="light"] #resume {
+    border-top: 4px solid var(--accent-lime);
+}
+
+body[data-theme="light"] #contact {
+    border-top: 4px solid var(--accent-secondary);
+}
+
+/* Section headings */
+
+body[data-theme="light"] main>section>h2 {
+    display: table;
+    position: relative;
+    color: #080817;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(25px, 3.3vw, 42px);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+
+    padding: 6px 16px;
+    margin: 0 0 30px;
+    min-width: 0;
+
+    background: var(--accent-secondary);
+    border: none;
+    border-radius: 0;
+    transform: skew(-5deg);
+    box-shadow: 5px 5px 0 var(--accent-primary);
+}
+
+/* 7. BOLD MAGAZINE TYPOGRAPHY */
+
+body[data-theme="light"] main>section p {
+    color: #181824;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: -0.3px;
+}
+
+body[data-theme="light"] #about p,
+body[data-theme="light"] #resume p,
+body[data-theme="light"] #contact p {
+    max-width: 760px;
+}
+
+body[data-theme="light"] .project-card p {
+    color: #252535;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: -0.3px;
+}
+
+/* 8. ABOUT ME */
+
+body[data-theme="light"] .about-tagline {
+    display: table;
+    max-width: 100%;
+    margin: 15px 0 25px;
+    padding: 9px 17px;
+
+    color: #080817;
+    background: var(--accent-lime);
+    border: none;
+    border-radius: 0;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(15px, 2vw, 21px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.5px;
+    transform: rotate(-1deg);
+}
+
+body[data-theme="light"] #about>p:not(.about-tagline) {
+    border-left: 5px solid #ff009d;
+    padding: 8px 0 8px 22px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: #181824;
+    font-weight: 700;
+    line-height: 1.85;
+}
+
+/* Skills container */
+
+body[data-theme="light"] .about-skills {
+    padding: 25px;
+    margin-top: 30px;
+    background: #ffffff;
+    border: 2px solid var(--accent-secondary);
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 rgba(255, 0, 157, 0.75);
+}
+
+body[data-theme="light"] .about-skills h3 {
+    color: #080817;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+/* Skill tags */
+
+body[data-theme="light"] .skills-list span {
+    display: inline-block;
+    background: #ffffff;
+    color: #080817;
+    border: 2px solid #080817;
+    border-radius: 0;
+    padding: 9px 15px;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+
+    transform: skew(-5deg);
+    box-shadow: 4px 4px 0 #ff009d;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body[data-theme="light"] .skills-list span:nth-child(4n+1) {
+    box-shadow: 4px 4px 0 #ff009d;
+}
+
+body[data-theme="light"] .skills-list span:nth-child(4n+2) {
+    box-shadow: 4px 4px 0 #00e5ee;
+}
+
+body[data-theme="light"] .skills-list span:nth-child(4n+3) {
+    box-shadow: 4px 4px 0 #c7ff00;
+}
+
+body[data-theme="light"] .skills-list span:nth-child(4n) {
+    box-shadow: 4px 4px 0 #080817;
+}
+
+body[data-theme="light"] .skills-list span:hover {
+    background: #ffffff;
+    border-color: #080817;
+    transform: skew(-5deg) translateY(-4px);
+}
+
+/* 9. PROJECTS */
+
+body[data-theme="light"] .project-grid {
+    gap: 25px;
+}
+
+body[data-theme="light"] .project-card {
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    background: #ffffff;
+    border: 3px solid #080817;
+    border-radius: 4px;
+    box-shadow: 8px 8px 0 #ff009d;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+body[data-theme="light"] .project-card:nth-child(2) {
+    box-shadow: 8px 8px 0 #00e5ee;
+}
+
+body[data-theme="light"] .project-card:nth-child(3) {
+    box-shadow: 8px 8px 0 #c7ff00;
+}
+
+body[data-theme="light"] .project-card:nth-child(4) {
+    box-shadow: 8px 8px 0 #ff009d;
+}
+
+body[data-theme="light"] .project-card:hover {
+    transform: translateY(-5px);
+    border-color: #080817;
+    box-shadow: 11px 11px 0 #080817;
+}
+
+/* Decorative diagonal streaks */
+
+body[data-theme="light"] .project-card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 95px;
+    height: 95px;
+
+    background: repeating-linear-gradient(130deg,
+            transparent 0 9px,
+            #ff009d 9px 15px,
+            transparent 15px 23px,
+            #c7ff00 23px 28px);
+
+    opacity: 0.9;
+    transform: rotate(8deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body[data-theme="light"] .project-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Project titles */
+
+body[data-theme="light"] .project-card h3 {
+    display: table;
+    color: #080817;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 4px solid var(--accent-primary);
+}
+
+body[data-theme="light"] .project-card span {
+    color: #080817;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* Project previews */
+
+body[data-theme="light"] .project-preview {
+    background: #f3f7f9;
+    border: 2px solid #080817;
+    border-radius: 3px;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+body[data-theme="light"] .project-image {
+    max-width: 100%;
+}
+
+body[data-theme="light"] .website-preview small {
+    color: var(--accent-primary);
+}
+
+/* Graphic design preview */
+
+body[data-theme="light"] .graphic-preview {
+    display: block;
+    height: 220px;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #ff009d transparent;
+}
+
+body[data-theme="light"] .graphic-preview-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body[data-theme="light"] .graphic-preview::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff009d, #00e5ee);
+    border-radius: 10px;
+}
+
+/* 10. BUTTONS */
+
+body[data-theme="light"] .btn {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-radius: 0;
+
+    transition:
+        transform 0.25s,
+        background 0.25s,
+        box-shadow 0.25s;
+}
+
+body[data-theme="light"] .btn-primary {
+    background: var(--accent-primary);
+    color: #ffffff;
+    border: 2px solid var(--accent-primary);
+    box-shadow: 4px 4px 0 rgba(0, 229, 238, 0.95);
+}
+
+body[data-theme="light"] .btn-primary:hover {
+    background: #d90084;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0 var(--accent-lime);
+}
+
+body[data-theme="light"] .btn-secondary {
+    background: white;
+    color: #080817;
+    border: 3px solid var(--accent-secondary);
+    box-shadow: none;
+}
+
+body[data-theme="light"] .btn-secondary:hover {
+    background: var(--accent-lime);
+    color: #080817;
+    transform: translateY(-3px);
+}
+
+body[data-theme="light"] .project-actions .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+}
+
+/* Hero buttons */
+
+body[data-theme="light"] .hero .btn {
+    border-radius: 0;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    transform: skew(-5deg);
+}
+
+body[data-theme="light"] .hero .btn:hover {
+    transform: skew(-5deg) translateY(-4px);
+}
+
+/* 11. RESUME */
+
+body[data-theme="light"] #resume>p {
+    border-left: 5px solid #c7ff00;
+    padding: 10px 0 10px 22px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+    color: #181824;
+    font-weight: 700;
+    line-height: 1.85;
+}
+
+body[data-theme="light"] #resume .btn {
+    border-radius: 0;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    transform: skew(-5deg);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body[data-theme="light"] #resume .btn:hover {
+    transform: skew(-5deg) translateY(-4px);
+}
+
+/* 12. CONTACT */
+
+body[data-theme="light"] #contact>p {
+    border-left: 5px solid #00e5ee;
+    padding: 10px 0 10px 22px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+    color: #181824;
+    font-weight: 700;
+    line-height: 1.85;
+}
+
+/* Contact links */
+
+body[data-theme="light"] #contact a,
+body[data-theme="light"] #contact a:visited {
+    display: inline-block;
+    color: #080817;
+    background: #ffffff;
+    border: 2px solid #080817;
+    border-radius: 0;
+    padding: 8px 14px;
+    margin: 4px 6px 4px 0;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: none;
+
+    box-shadow: 4px 4px 0 #00e5ee;
+    transform: skew(-5deg);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+body[data-theme="light"] #contact a:nth-of-type(even) {
+    box-shadow: 4px 4px 0 #ff009d;
+}
+
+body[data-theme="light"] #contact a:hover {
+    color: #080817;
+    background: #c7ff00;
+    transform: skew(-5deg) translateY(-4px);
+    box-shadow: 6px 6px 0 #ff009d;
+}
+
+/* 13. FOOTER */
+
+body[data-theme="light"] footer {
+    background: #080817;
+    color: #ffffff;
+    border-top: 5px solid #00e5ee;
+    padding: 30px 20px;
+    text-align: center;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 5px 0 #ff009d;
+}
+
+body[data-theme="light"] footer p {
+    color: #ffffff;
+    margin: 0;
+}
+
+body[data-theme="light"] footer a {
+    color: #00e5ee;
+    text-decoration: none;
+}
+
+body[data-theme="light"] footer a:hover {
+    color: #c7ff00;
+}
+
+/* 14. LIQUID NAV MORPH */
+
+body[data-theme="light"].liquid-nav-merged .navbar {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+
+    width: max-content;
+    max-width: calc(100% - 24px);
+    margin: 0;
+    padding: 8px 14px;
+
+    border: 3px solid #080817;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 7px 7px 0 #ff009d;
+}
+
+/* Liquid squeeze and bounce */
+
+body[data-theme="light"].liquid-nav-merged .navbar.liquid-nav-bounce {
+    animation: liquidNavBounce 650ms cubic-bezier(.22, 1.4, .36, 1) both;
+}
+
+@keyframes liquidNavBounce {
+    0% {
+        transform: translateX(-50%) scaleX(1.12) scaleY(.55);
+        border-radius: 50%;
+    }
+
+    40% {
+        transform: translateX(-50%) scaleX(.88) scaleY(1.16);
+        border-radius: 32px;
+    }
+
+    70% {
+        transform: translateX(-50%) scaleX(1.04) scaleY(.94);
+        border-radius: 18px;
+    }
+
+    100% {
+        transform: translateX(-50%) scaleX(1) scaleY(1);
+        border-radius: 22px;
+    }
+}
+
+body[data-theme="light"].liquid-nav-merged .nav-links {
+    gap: 12px;
+}
+
+body[data-theme="light"].liquid-nav-merged .nav-links a {
+    padding: 5px 9px;
+    font-size: 13px;
+}
+
+/* 15. RESPONSIVE DESIGN */
+
+@media screen and (max-width: 900px) {
+    body[data-theme="light"] nav {
+        margin-top: -12px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body[data-theme="light"] .hero {
+        margin: 15px 12px 0;
+        padding: 60px 25px;
+    }
+
+    body[data-theme="light"] .hero h1 {
+        font-size: clamp(36px, 7vw, 60px);
+    }
+
+    body[data-theme="light"] main>section {
+        padding: 28px;
+    }
+
+    body[data-theme="light"] .project-card {
+        padding: 20px;
+    }
+}
+
+/* Narrow screen merged navigation */
+
+@media screen and (max-width: 850px) {
+    body[data-theme="light"].liquid-nav-merged .navbar {
+        top: 60px;
+        width: max-content;
+        max-width: calc(100% - 24px);
+    }
+
+    body[data-theme="light"].liquid-nav-merged .nav-links {
+        gap: 4px;
+    }
+
+    body[data-theme="light"].liquid-nav-merged .nav-links a {
+        padding: 5px 6px;
+        font-size: 12px;
+    }
+}
+
+/* 16. MOBILE DESIGN AND TYPOGRAPHY */
+
+@media screen and (max-width: 600px) {
+
+    /* Top design bar */
+
+    body[data-theme="light"] .design-bar {
+        padding: 10px 14px;
+    }
+
+    body[data-theme="light"] .site-identity strong {
+        font-size: 15px;
+    }
+
+    body[data-theme="light"] .site-identity span {
+        font-size: 9px;
+        letter-spacing: 0.3px;
+    }
+
+    /* Navigation */
+
+    body[data-theme="light"] .navbar {
+        padding: 10px 8px;
+    }
+
+    body[data-theme="light"] .nav-links {
+        gap: 2px;
+    }
+
+    body[data-theme="light"] .nav-links a {
+        font-size: 12px;
+        padding: 5px 4px;
+    }
+
+    /* Hero */
+
+    body[data-theme="light"] .hero {
+        min-height: 400px;
+        padding: 55px 20px;
+    }
+
+    body[data-theme="light"] .hero h1 {
+        font-size: clamp(34px, 9vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    body[data-theme="light"] .hero .intro {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    /* Main panels */
+
+    body[data-theme="light"] main>section {
+        padding: 22px;
+    }
+
+    body[data-theme="light"] main>section>h2 {
+        font-size: 26px;
+    }
+
+    /* Project headings */
+
+    body[data-theme="light"] .project-card h3 {
+        font-size: 21px;
+    }
+
+    /* Match desktop paragraph font */
+
+    body[data-theme="light"] main section p,
+    body[data-theme="light"] .project-card p,
+    body[data-theme="light"] .hero>p:not(.intro) {
+        font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.8;
+        letter-spacing: -0.3px;
+    }
+
+    /* About, Resume and Contact paragraphs */
+
+    body[data-theme="light"] #about>p:not(.about-tagline),
+    body[data-theme="light"] #resume>p,
+    body[data-theme="light"] #contact>p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.85;
+    }
+
+    /* Larger, readable Contact links */
+
+    body[data-theme="light"] #contact a,
+    body[data-theme="light"] #contact a:visited {
+        font-family: "Arial Black", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 900;
+        font-style: italic;
+
+        padding: 12px 14px;
+        min-height: 44px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        box-sizing: border-box;
+    }
+
+    /* Skills */
+
+    body[data-theme="light"] .skills-list span {
+        font-family: "Arial Black", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    /* Resume buttons */
+
+    body[data-theme="light"] #resume .btn {
+        font-size: 14px;
+        font-weight: 900;
+    }
+}
+
+/* 17. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    body[data-theme="light"] .navbar {
+        transition: none;
+    }
+
+    body[data-theme="light"].liquid-nav-merged .navbar.liquid-nav-bounce {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   END — NEON PUNK LIGHT THEME
+   ========================================================= */

@@ -10,19 +10,45 @@
     <meta name="description"
         content="Professional portfolio of William Cookston Igou, showcasing web design, development, SEO, and AI projects.">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="dark.css">
+    <link rel="stylesheet" href="light.css">
+
 </head>
 
 <body>
 
+    <!-- Portfolio Design Mode Bar -->
+    <div class="design-bar">
+
+        <div class="site-identity">
+            <strong>William Cookston Igou</strong>
+            <span>DIGITAL CREATOR / WEB DESIGN / DEVELOPMENT</span>
+        </div>
+
+        <div class="theme-selector">
+            <button id="theme-toggle" type="button" aria-expanded="false" aria-controls="theme-options">
+                Change Mode ▾
+            </button>
+
+            <div id="theme-options" class="theme-options" hidden>
+                <button type="button" data-set-theme="dark">
+                    Neon Futurism (Dark 🌙)
+                </button>
+
+                <button type="button" data-set-theme="light">
+                    Neon Punk (Light ☀️)
+                </button>
+            </div>
+        </div>
+    </div>
+
     <header>
         <nav class="navbar">
-            <div class="logo">WCI.</div>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -34,7 +60,13 @@
 
             <h1>William Cookston Igou</h1>
 
-            <p>Web Designer | Developer | SEO | AI Enthusiast</p>
+
+            <div class="hero-specialties">
+                <span>Web Designer</span>
+                <span>Developer</span>
+                <span>SEO</span>
+                <span>AI Enthusiast</span>
+            </div>
 
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">
@@ -50,36 +82,51 @@
 
     <main>
 
+
         <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
 
-            <p>
-                I'm William Cookston Igou, a web designer
-                with experience in website development,
-                SEO, WordPress, and digital design.
-
-                I'm currently expanding my skills in
-                programming, application development,
-                and artificial intelligence.
+            <p class="about-tagline">
+                Creating digital experiences since 1999
             </p>
-        </section>
 
-        <!-- Skills -->
-        <section id="skills">
-            <h2>My Skills</h2>
+            <p>
+                I'm William Cookston Igou, a web designer and
+                digital creator with a background in website
+                development, digital publishing, SEO, and
+                graphic design.
+            </p>
 
-            <div class="skills-list">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>WordPress</span>
-                <span>SEO</span>
-                <span>Web Design</span>
-                <span>Graphic Design</span>
-                <span>AI Tools</span>
+            <p>
+                Over the years, I've developed and managed
+                websites, created digital content, and worked
+                with design and production tools.
+            </p>
+
+            <p>
+                Today, I'm combining that experience with
+                modern web technologies, mobile application
+                development, and artificial intelligence.
+            </p>
+
+            <!-- Skills Subsection -->
+            <div class="about-skills">
+                <h3>Skills &amp; Expertise</h3>
+
+                <div class="skills-list">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>WordPress</span>
+                    <span>SEO</span>
+                    <span>Web Design</span>
+                    <span>Graphic Design</span>
+                    <span>AI Tools</span>
+                </div>
             </div>
         </section>
+
 
         <!-- Projects -->
         <section id="projects">
@@ -87,24 +134,7 @@
 
             <div class="project-grid">
 
-                <!-- Portfolio Website -->
-                <div class="project-card">
-
-                    <div class="project-preview">
-                        WEBSITE PREVIEW
-                    </div>
-
-                    <h3>Portfolio Website</h3>
-
-                    <p>
-                        A professional website showcasing
-                        my skills and development projects.
-                    </p>
-
-                    <span>HTML | CSS</span>
-                </div>
-
-                <!-- Mood Music -->
+                <!-- Project 1: Mood Music -->
                 <div class="project-card">
 
                     <div class="project-preview">
@@ -125,7 +155,7 @@
                     <span>React Native | Expo | TypeScript</span>
                 </div>
 
-                <!-- SEO Preview Tool -->
+                <!-- Project 2: SEO Preview Tool -->
                 <div class="project-card">
 
                     <div class="project-preview">
@@ -144,11 +174,66 @@
                     </p>
 
                     <span>HTML | CSS | JavaScript | SEO</span>
+
+                    <div class="project-actions">
+                        <a href="seo-tool.html" class="btn btn-secondary">
+                            Try Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Portfolio Website -->
+                <div class="project-card">
+
+
+                    <div class="project-preview website-preview">
+                        <div>
+                            <div>WEBSITE PREVIEW</div>
+                            <small>COMING SOON</small>
+                        </div>
+                    </div>
+
+
+                    <h3>Portfolio Website</h3>
+
+                    <p>
+                        A professional website showcasing
+                        my skills and development projects.
+                    </p>
+
+                    <span>HTML | CSS</span>
+                </div>
+
+                <!-- Project 4: Early Graphic Designs -->
+                <div class="project-card">
+
+
+
+                    <!-- Scrollable Graphic Design Preview -->
+                    <div class="project-preview graphic-preview">
+
+                        <img src="images/early-graphic-designs.jpg" alt="Collection of early graphic design projects"
+                            class="graphic-preview-image" id="graphic-preview-image" tabindex="0" role="button"
+                            aria-label="View full-size graphic design collage">
+
+                    </div>
+
+
+
+                    <h3>Early Graphic Designs</h3>
+
+                    <p>
+                        A collection of earlier graphic design
+                        work highlighting my experience with
+                        digital artwork, creative layouts,
+                        and visual design.
+                    </p>
+
+                    <span>Graphic Design | Digital Artwork</span>
                 </div>
 
             </div>
         </section>
-
 
         <!-- Resume -->
         <section id="resume">
@@ -170,8 +255,6 @@
                 </a>
             </div>
         </section>
-
-
 
         <!-- Contact -->
         <section id="contact">
@@ -205,12 +288,29 @@
             </p>
         </section>
 
-
     </main>
 
     <footer>
         <p>&copy; 2026 William Cookston Igou</p>
     </footer>
+
+
+    <!-- Graphic Design Full-Screen Viewer -->
+    <div id="graphic-modal" class="graphic-modal" hidden>
+
+        <button type="button" class="graphic-modal-close" id="graphic-modal-close" aria-label="Close image viewer">
+            &times;
+        </button>
+
+        <img src="images/early-graphic-designs.jpg" alt="Full-size collection of early graphic designs"
+            class="graphic-modal-image">
+
+    </div>
+
+    <script src="graphic-viewer.js"></script>
+
+    <script src="theme.js"></script>
+    <script src="liquid-nav.js"></script>
 
 </body>
 
