@@ -506,3 +506,215 @@ body[data-theme="dark"] .graphic-preview::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #59d9ff, #a178ff);
     border-radius: 10px;
 }
+
+
+/* RESUME PAGE — CONTACT LINKS */
+
+body[data-theme="dark"] main section a,
+body[data-theme="dark"] main section a:visited {
+    color: var(--accent-primary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(89, 217, 255, 0.35);
+    transition:
+        color 0.3s,
+        border-color 0.3s,
+        text-shadow 0.3s;
+}
+
+body[data-theme="dark"] main section a:hover {
+    color: #a9eaff;
+    border-bottom-color: #a9eaff;
+    text-shadow: 0 0 12px rgba(89, 217, 255, 0.45);
+}
+
+
+/* =========================================
+   NEON FUTURISM — FLOATING SCI-FI NAVIGATION
+   ========================================= */
+
+/* Glass navigation with glowing gradient border */
+body[data-theme="dark"] .navbar {
+    background:
+        linear-gradient(rgba(3, 5, 12, 0.86),
+            rgba(3, 5, 12, 0.86)) padding-box,
+        linear-gradient(110deg,
+            #00dfff,
+            #a178ff,
+            #e04dff) border-box;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    box-shadow:
+        -4px 0 16px rgba(0, 220, 255, 0.25),
+        4px 0 16px rgba(180, 60, 255, 0.25),
+        inset 0 0 12px rgba(89, 217, 255, 0.05);
+
+    transition:
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+/* White navigation text */
+body[data-theme="dark"] .nav-links a {
+    color: #ffffff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Keep all links on one row */
+body[data-theme="dark"] .nav-links {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: clamp(5px, 2vw, 25px);
+}
+
+/* Hover */
+body[data-theme="dark"] .nav-links a:hover {
+    color: #ffffff;
+    text-shadow:
+        0 0 8px rgba(89, 217, 255, 0.9),
+        0 0 18px rgba(161, 120, 255, 0.5);
+}
+
+/* Navigation docks at the top when scrolling */
+body[data-theme="dark"].liquid-nav-merged .navbar {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 1001;
+
+    width: max-content;
+    max-width: calc(100% - 24px);
+    margin: 0;
+    padding: 9px 18px;
+
+    animation: futurismDock 500ms ease-out both;
+}
+
+/* Sci-fi docking animation — no bounce */
+@keyframes futurismDock {
+    from {
+        opacity: 0.65;
+        transform: translate(-50%, -12px);
+        box-shadow:
+            0 0 4px rgba(89, 217, 255, 0.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        box-shadow:
+            -4px 0 16px rgba(0, 220, 255, 0.3),
+            4px 0 16px rgba(180, 60, 255, 0.3),
+            0 0 22px rgba(89, 217, 255, 0.12);
+    }
+}
+
+/* Compact links when docked */
+body[data-theme="dark"].liquid-nav-merged .nav-links {
+    gap: 12px;
+}
+
+body[data-theme="dark"].liquid-nav-merged .nav-links a {
+    padding: 5px 9px;
+    font-size: 13px;
+}
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 850px) {
+
+    body[data-theme="dark"] .navbar {
+        padding: 12px 10px;
+    }
+
+    body[data-theme="dark"] .nav-links {
+        gap: 5px;
+    }
+
+    body[data-theme="dark"] .nav-links a {
+        font-size: 12px;
+        padding: 5px 6px;
+    }
+
+    body[data-theme="dark"].liquid-nav-merged .navbar {
+        top: 60px;
+        padding: 8px 10px;
+    }
+
+    body[data-theme="dark"].liquid-nav-merged .nav-links {
+        gap: 4px;
+    }
+
+    body[data-theme="dark"].liquid-nav-merged .nav-links a {
+        font-size: 12px;
+        padding: 5px 5px;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 400px) {
+
+    body[data-theme="dark"] .nav-links,
+    body[data-theme="dark"].liquid-nav-merged .nav-links {
+        gap: 2px;
+    }
+
+    body[data-theme="dark"] .nav-links a,
+    body[data-theme="dark"].liquid-nav-merged .nav-links a {
+        font-size: 11px;
+        padding: 5px 3px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    body[data-theme="dark"].liquid-nav-merged .navbar {
+        animation: none;
+    }
+}
+
+
+/* =========================================
+   NEON FUTURISM — GLASS PROJECT CARDS
+   Matches "Creating Digital Experiences"
+   ========================================= */
+
+body[data-theme="dark"] .project-card {
+    background:
+        linear-gradient(rgba(3, 5, 12, 0.86),
+            rgba(3, 5, 12, 0.86)) padding-box,
+        linear-gradient(110deg,
+            #00dfff,
+            #a178ff,
+            #e04dff) border-box;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    box-shadow:
+        -4px 0 16px rgba(0, 220, 255, 0.25),
+        4px 0 16px rgba(180, 60, 255, 0.25),
+        inset 0 0 12px rgba(89, 217, 255, 0.05);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Slightly brighter when hovering */
+body[data-theme="dark"] .project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        -5px 0 22px rgba(0, 220, 255, 0.35),
+        5px 0 22px rgba(180, 60, 255, 0.35),
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        inset 0 0 16px rgba(89, 217, 255, 0.08);
+}

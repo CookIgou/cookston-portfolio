@@ -1,5 +1,5 @@
 
-/* Portfolio 2.0 — Neon Punk Liquid Navigation */
+/* Portfolio 2.0 — Neon Punk & Neon Futurism Navigation */
 
 document.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector(".navbar");
@@ -15,14 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateLiquidNav() {
         const isLight = document.body.dataset.theme === "light";
-        const shouldMerge = isLight && window.scrollY > 110;
+
+        // Both themes can now dock when scrolling.
+        const shouldMerge = window.scrollY > 110;
 
         document.body.classList.toggle(
             "liquid-nav-merged",
             shouldMerge
         );
 
-        if (shouldMerge && !previousMerged && !reducedMotion.matches) {
+        // Keep the original bounce exclusive to light mode.
+        if (
+            isLight &&
+            shouldMerge &&
+            !previousMerged &&
+            !reducedMotion.matches
+        ) {
             nav.classList.remove("liquid-nav-bounce");
 
             // Restart the entrance animation.
@@ -93,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         passive: true
     });
 
-    // Also respond when the visitor changes themes.
+    // Respond when the visitor changes themes.
     const themeButtons = document.querySelectorAll(
         "[data-set-theme]"
     );

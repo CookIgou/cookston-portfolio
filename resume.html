@@ -7,29 +7,61 @@
 
     <title>Resume | William Cookston Igou</title>
 
-    <meta name="description" content="Professional resume of William Cookston Igou,
-          Web Designer and Digital Content Specialist.">
+    <meta name="description"
+        content="Professional resume of William Cookston Igou, Web Designer and Digital Content Specialist.">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Portfolio 2.0 Theme Styles -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="dark.css">
+    <link rel="stylesheet" href="light.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">WCI.</div>
+    <!-- Portfolio Design Mode Bar -->
+    <div class="design-bar">
 
+        <div class="site-identity">
+            <strong>William Cookston Igou</strong>
+            <span>DIGITAL CREATOR / WEB DESIGN / DEVELOPMENT</span>
+        </div>
+
+        <div class="theme-selector">
+            <button id="theme-toggle" type="button" aria-expanded="false" aria-controls="theme-options">
+                Change Mode ▾
+            </button>
+
+            <div id="theme-options" class="theme-options" hidden>
+                <button type="button" data-set-theme="dark">
+                    Neon Futurism (Dark)
+                </button>
+
+                <button type="button" data-set-theme="light">
+                    Neon Punk (Light)
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
+                <li>
+                    <a href="resume.html" class="active" aria-current="page">Resume</a>
+                </li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <div class="hero">
+        <!-- Resume Hero -->
+        <div class="hero" id="home">
+
             <p class="intro">PROFESSIONAL RESUME</p>
 
             <h1>William Cookston Igou</h1>
@@ -37,6 +69,7 @@
             <p>Web Designer &amp; Digital Content Specialist</p>
 
             <div class="hero-buttons">
+
                 <a href="index.html" class="btn btn-secondary">
                     Back to Portfolio
                 </a>
@@ -44,12 +77,15 @@
                 <a href="William-Cookston-Igou-Resume.pdf" class="btn btn-primary" download>
                     Download Resume
                 </a>
+
             </div>
         </div>
+
     </header>
 
     <main>
 
+        <!-- Contact Information -->
         <section>
             <h2>Contact Information</h2>
 
@@ -75,6 +111,7 @@
             </p>
         </section>
 
+        <!-- Professional Summary -->
         <section>
             <h2>Professional Summary</h2>
 
@@ -96,6 +133,7 @@
             </p>
         </section>
 
+        <!-- Technical Skills -->
         <section>
             <h2>Technical Skills</h2>
 
@@ -117,11 +155,14 @@
             </div>
         </section>
 
+        <!-- Professional Experience -->
         <section>
             <h2>Professional Experience</h2>
 
-            <h3>Independent Website Development &amp;
-                Digital Publishing</h3>
+            <h3>
+                Independent Website Development &amp;
+                Digital Publishing
+            </h3>
 
             <p><strong>1999–2025</strong></p>
 
@@ -176,6 +217,7 @@
             </ul>
         </section>
 
+        <!-- Recent Projects -->
         <section>
             <h2>Recent Development Projects</h2>
 
@@ -201,6 +243,7 @@
             </p>
         </section>
 
+        <!-- Professional Development -->
         <section>
             <h2>Professional Development</h2>
 
@@ -218,6 +261,12 @@
     <footer>
         <p>&copy; 2026 William Cookston Igou</p>
     </footer>
+
+    <!-- Shared Theme System -->
+    <script src="theme.js"></script>
+
+    <!-- Shared Navigation Effects -->
+    <script src="liquid-nav.js"></script>
 
 </body>
 

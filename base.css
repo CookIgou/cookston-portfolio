@@ -419,3 +419,158 @@ footer {
         padding: 10px 14px;
     }
 }
+
+
+/* =========================================
+   PORTFOLIO 2.0 — THEME PREVIEW OPTIONS
+   ========================================= */
+
+/* Dropdown layout */
+.theme-options {
+    min-width: 260px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    z-index: 3000;
+}
+
+.theme-options[hidden] {
+    display: none;
+}
+
+/* Shared preview button styling */
+body .theme-options button[data-set-theme] {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+body .theme-options button[data-set-theme]:hover {
+    transform: translateX(-3px);
+}
+
+/* NEON FUTURISM — DARK PREVIEW */
+body .theme-options button[data-set-theme="dark"] {
+    color: #e9f7ff;
+    background:
+        linear-gradient(125deg,
+            #080e24 0%,
+            #19234b 55%,
+            #351b62 100%);
+    border-color: #59d9ff;
+    box-shadow:
+        inset 0 0 14px rgba(89, 217, 255, 0.12);
+}
+
+body .theme-options button[data-set-theme="dark"]:hover {
+    color: #ffffff;
+    background:
+        linear-gradient(125deg,
+            #101b3b,
+            #29235e,
+            #482378);
+    box-shadow:
+        0 0 14px rgba(89, 217, 255, 0.45);
+}
+
+/* NEON PUNK — LIGHT PREVIEW */
+body .theme-options button[data-set-theme="light"] {
+    color: #101020;
+    background:
+        linear-gradient(120deg,
+            #ffffff 0%,
+            #f7faff 65%,
+            #eaffb8 100%);
+    border-color: #ff2aa3;
+    box-shadow:
+        inset -5px -4px 0 rgba(0, 229, 238, 0.18);
+}
+
+body .theme-options button[data-set-theme="light"]:hover {
+    color: #101020;
+    background:
+        linear-gradient(120deg,
+            #ffffff,
+            #eaffb8);
+    box-shadow:
+        4px 4px 0 rgba(0, 229, 238, 0.65);
+}
+
+/* Keyboard accessibility */
+body .theme-options button[data-set-theme]:focus-visible {
+    outline: 3px solid #a3ff12;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   THEME PREVIEW — TYPOGRAPHY & COLORS
+   ========================================= */
+
+/* Dark: Neon Futurism */
+body .theme-options button[data-set-theme="dark"],
+body .theme-options button[data-set-theme="dark"] span {
+    color: #e9faff !important;
+    font-family: 'Orbitron', 'Arial', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    text-shadow: 0 0 8px rgba(89, 217, 255, 0.65);
+}
+
+body .theme-options button[data-set-theme="dark"] {
+    background: linear-gradient(125deg,
+            #080e24,
+            #19234b 55%,
+            #351b62) !important;
+    border: 2px solid #59d9ff !important;
+}
+
+/* Light: Neon Punk */
+body .theme-options button[data-set-theme="light"],
+body .theme-options button[data-set-theme="light"] span {
+    color: #101020 !important;
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.3px;
+    text-shadow: 2px 2px 0 rgba(255, 42, 163, 0.18);
+}
+
+body .theme-options button[data-set-theme="light"] {
+    background: linear-gradient(120deg,
+            #ffffff,
+            #f7faff 65%,
+            #eaffb8) !important;
+    border: 2px solid #ff2aa3 !important;
+}
+
+/* Secondary mode labels */
+body .theme-options .theme-label {
+    font-size: 10px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.3px;
+    opacity: 0.85;
+}
+
+/* Keep text readable on hover */
+body .theme-options button[data-set-theme="dark"]:hover {
+    color: #ffffff !important;
+    box-shadow: 0 0 16px rgba(89, 217, 255, 0.55);
+}
+
+body .theme-options button[data-set-theme="light"]:hover {
+    color: #101020 !important;
+    box-shadow: 4px 4px 0 rgba(0, 229, 238, 0.65);
+}
